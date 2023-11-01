@@ -39,13 +39,12 @@ def start():
                 if search_note():
                     c_id = int(view.input_request(text.input_del_note_id))
                     name = model.delete_note(c_id)
-                    view.print_message(text.contact_action(name, text.operation[2]))
+                    view.print_message(text.note_action(name, text.operation[2]))
             case 8:
-                if model.original_book != model.phone_book:
+                if model.original_book != model.book:
                     if view.input_request(text.confirm_changes).lower() == 'y':
                         model.save_file()
                         view.print_message(text.save_successful)
                 view.print_message(text.exit_program)
                 break
-
 
