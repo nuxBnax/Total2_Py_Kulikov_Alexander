@@ -4,6 +4,7 @@ import view
 
 
 def search_note():
+    """ Метод обрабатывает запрос, ищет и выводит на экран искомую заметку по заданному ключевому слову """
     word = view.input_request(text.input_search_word)
     result = model.find_note(word)
     view.show_notes(result, text.not_find(word))
@@ -12,6 +13,7 @@ def search_note():
     
 
 def start():
+    """ Метод предоставлющий контроль над возможными операциями с заметками (создание, изменение, удаление и т.д.) """
     while True:
         choice = view.main_menu()
         match choice:
